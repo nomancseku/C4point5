@@ -12,17 +12,10 @@ from C4point5 import C45
 model = C45.C4point5([train dataset path])
 
 model.readDataset()
-
 model.preprocessData()
-
 model.generateTree()
-
 model.printTree()
-
 model.predict()
-
 model.evaluate([test dataset path])
-
 model.viewTruePred([test dataset path])
-
 ```
