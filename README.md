@@ -1,6 +1,9 @@
-C4.5 Algorithm implementation. This work is a part of my Pattern Recognition Lab on CSE, KHULNA UNIVERSITY.
-Hello there,
-To use this module, open command prompt and type - pip install C4point5
+# C4.5 Algorithm implementation. 
+## This work is a part of my Pattern Recognition Lab on CSE, KHULNA UNIVERSITY.
+## Abdullah Al Noman, CSE-KU
+
+### Hello there,
+### To use this module, open command prompt and type - *'''pip install C4point5'''*
 
 after installing the module write code as below,
 
