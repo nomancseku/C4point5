@@ -149,11 +149,11 @@ class C4point5:
                             break
                 e = self.gain(curData, subsets)
                 s = self.splitInfo(len(curData), subsets)
-                """if s!= 0:
+                if s!= 0:
                     gr = e/s
                 else:
-                    gr = e"""
-                gr = e/s
+                    gr = e
+                #gr = e/s
                 if gr > maxInfoGainRatio:
                     maxInfoGainRatio = gr
                     splitted = subsets
@@ -162,8 +162,9 @@ class C4point5:
                     
             else:
                 curData.sort(key = lambda x: x[indexOfAttribute])
-                indexOfClass = len(attribute)
-                #print(curData)
+                #print(curData[0])
+                indexOfClass = len(curData[0])-1
+                #print(indexOfClass)
                 #exit()
                 for j in range(0, len(curData) - 1):
                     if curData[j][indexOfClass] != curData[j+1][indexOfClass]:
@@ -177,11 +178,11 @@ class C4point5:
                                 less.append(row)
                         e = self.gain(curData, [less, greater])
                         s = self.splitInfo(len(curData), [less, greater])
-                        """if s!= 0:
+                        if s!= 0:
                             gr = e/s
                         else:
-                            gr = e"""
-                        gr = e/s
+                            gr = e
+                        #gr = e/s
                         if gr >= maxInfoGainRatio:
                             splitted = [less, greater]
                             maxInfoGainRatio = gr
@@ -330,10 +331,10 @@ class C4point5:
         predicted = []
         for i in range(length):
             row = [str(i).strip() for i in list(data.iloc[i])[:-1]]
-            true.append(data.iloc[i][-1].strip())
+            true.append(str(data.iloc[i][-1]).strip())
             self.prediction(self.tree, row)
             predicted.append(self.pred)
             
-        print('True label', 'Predicted label')
+        print('True label --', 'Predicted label')
         for i in range(length):
-            print(true[i], predicted[i])
+            print(true[i],'--', predicted[i])
